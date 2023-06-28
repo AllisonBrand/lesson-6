@@ -16,18 +16,18 @@ object climate
     reader sample;
 }
 
-// Task 2 - Get historical weather data        Seattle, Washington (47.6062° N, 122.3321° W) for the year 2020
+// Task 2 - Get historical weather data
 #ifmissing "historical.glm"
-#python -m nsrdb_weather -y=2020 -p=47.606,-122.33 -g=historical.glm
+#python -m nsrdb_weather -y=2020 -p=37.5,-122.4 -g=historical.glm
 #endif
-#include "historical.glm" // load weather data
+#include "historical.glm"
 
-// Task 3 - Get realtime weather data for Seattle-Tacoma International Airport (SEA)
-#python -m metar2glm -c realtime SEA >realtime.glm
+// Task 3 - Get realtime weather data
+#python -m metar2glm -c realtime KSFO >realtime.glm
 #include "realtime.glm"
 
-// Task 4 - Get forecast weather data                Seattle, Washington (47.6062° N, 122.3321° W)
-#python -m noaa_forecast -p=47.606,-122.33 -c=forecast.csv -n=forecast -g=forecast.glm
+// Task 4 - Get forecast weather data
+#python -m noaa_forecast -p=37.5,-122.4 -c=forecast.csv -n=forecast -g=forecast.glm
 #include "forecast.glm"
 clock
 {
