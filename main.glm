@@ -12,7 +12,7 @@ object csv_reader
 }
 object climate
 {
-    tmyfile sample.csv;
+    tmyfile sample.csv; 
     reader sample;
 }
 
