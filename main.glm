@@ -16,7 +16,7 @@ object climate
     reader sample;
 }
 
-// Task 2 - Get historical weather data         Seattle, Washington (47.6062° N, 122.3321° W) for the year 2020
+// Task 2 - Get historical weather data        Seattle, Washington (47.6062° N, 122.3321° W) for the year 2020
 #ifmissing "historical.glm"
 #python -m nsrdb_weather -y=2020 -p=47.606,-122.33 -g=historical.glm
 #endif
