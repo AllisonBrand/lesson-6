@@ -23,9 +23,9 @@ object climate
 #include "historical.glm" // load weather data
 
 // Task 3 - Get realtime weather data for Seattle-Tacoma International Airport (SEA)
-#python -m metar2glm -c realtime SEA >realtime.glm
-#include "realtime.glm"
-
+#python -m metar2glm -c realtime KSEA >realtime.glm                                    // The documentation link at the bottom of the lesson instructions is wrong
+#include "realtime.glm"                                                                 // The K in front of SEA for Seattle Airport indicates that it's in the US
+                                                                                        //          (C is for Canada, see https://www.aviationweather.gov/metar)
 // Task 4 - Get forecast weather data                Seattle, Washington (47.6062° N, 122.3321° W)
 #python -m noaa_forecast -p=47.606,-122.33 -c=forecast.csv -n=forecast -g=forecast.glm
 #include "forecast.glm"
